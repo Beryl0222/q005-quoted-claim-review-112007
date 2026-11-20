@@ -12,7 +12,7 @@ class RecordsTest(unittest.TestCase):
         self.data = load_records(Path(__file__).resolve().parents[1] / "data" / "records.json")
 
     def test_record_references(self):
-        for source, field, target in [('display', 'revision', 'revision'), ('exposure', 'display', 'display'), ('exposure', 'revision', 'revision'), ('active_cards', 'display', 'display'), ('active_cards', 'ref', 'bulletin'), ('slots', 'displays', 'display')]:
+        for source, field, target in [('display', 'revision', 'revision'), ('exposure', 'display', 'display'), ('exposure', 'revision', 'revision'), ('exposure', 'linked_revision', 'revision'), ('active_cards', 'display', 'display'), ('active_cards', 'ref', 'bulletin'), ('slots', 'displays', 'display')]:
             group, _, key = target.partition(".")
             keys = {row[key or "id"] for row in self.data[group]}
             for row in self.data[source]:

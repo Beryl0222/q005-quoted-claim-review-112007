@@ -132,7 +132,8 @@
       "id": "E3",
       "viewer": "读者甲",
       "display": "S5",
-      "revision": "T1v2",
+      "revision": "T4v1",
+      "linked_revision": "T1v2",
       "time": "2026-11-28T12:15:00+08:00"
     },
     {
