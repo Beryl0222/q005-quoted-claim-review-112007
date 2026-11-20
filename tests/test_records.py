@@ -12,7 +12,7 @@ class RecordsTest(unittest.TestCase):
         self.data = load_records(Path(__file__).resolve().parents[1] / "data" / "records.json")
 
     def test_record_references(self):
-        for source, field, target in [('display', 'revision', 'revision'), ('decisions', 'display', 'display'), ('decisions', 'ref', 'bulletin'), ('appeal', 'decision', 'decisions')]:
+        for source, field, target in [('display', 'revision', 'revision'), ('exposure', 'display', 'display'), ('exposure', 'revision', 'revision'), ('active_cards', 'display', 'display'), ('active_cards', 'ref', 'bulletin'), ('slots', 'displays', 'display')]:
             group, _, key = target.partition(".")
             keys = {row[key or "id"] for row in self.data[group]}
             for row in self.data[source]:
@@ -35,7 +35,8 @@ class RecordsTest(unittest.TestCase):
         rev_ids = {item["id"] for item in self.data["revision"]}
         for link in self.data["links"]:
             self.assertIn(link["target"], rev_ids if link["mode"] == "冻结引用" else post_ids)
-        self.assertGreater(len(self.data["decisions"]), 1)
+        self.assertEqual(len(self.data["active_cards"][0]["ref"]), 2)
+        self.assertTrue(any(item["revision"] is None for item in self.data["exposure"]))
         self.assertIn(["headline"], [item["visible"] for item in self.data["display"]])
 
 

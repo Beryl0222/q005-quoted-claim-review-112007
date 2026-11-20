@@ -113,39 +113,97 @@
       "text": "N1 仅指个人营业备案，企业合并备案暂停的通知另发。"
     }
   ],
-  "decisions": [
+  "exposure": [
     {
-      "id": "D1",
+      "id": "E1",
+      "viewer": "读者甲",
       "display": "S1",
-      "ref": "N1",
-      "quote": "沿岸小微商户下月一律暂停备案",
-      "effect": "暂缓扩散"
+      "revision": "T1v1",
+      "time": "2026-11-27T08:00:00+08:00"
     },
     {
-      "id": "D2",
-      "display": "S3",
-      "ref": "N2",
-      "quote": "西岸柜台是否关闭",
-      "effect": "提示"
+      "id": "E2",
+      "viewer": "读者乙",
+      "display": "S2",
+      "revision": "T3v1",
+      "time": "2026-11-27T08:05:00+08:00"
     },
     {
-      "id": "D3",
+      "id": "E3",
+      "viewer": "读者甲",
+      "display": "S5",
+      "revision": "T1v2",
+      "time": "2026-11-28T12:15:00+08:00"
+    },
+    {
+      "id": "E4",
+      "viewer": "读者丙",
       "display": "S3",
-      "ref": "N2",
-      "quote": "港区自助柜已永久撤除",
-      "effect": "暂缓扩散"
+      "revision": "T3v1",
+      "time": "2026-11-27T08:11:00+08:00"
+    },
+    {
+      "id": "E5",
+      "viewer": "读者丁",
+      "display": "S4",
+      "revision": "T2v1",
+      "time": "2026-11-27T12:13:00+08:00"
+    },
+    {
+      "id": "E6",
+      "viewer": "读者甲",
+      "display": "S3",
+      "revision": "T3v1",
+      "time": "2026-11-27T12:15:00+08:00"
+    },
+    {
+      "id": "E7",
+      "viewer": "读者戊",
+      "display": "S5",
+      "revision": null,
+      "time": "2026-11-27T12:22:00+08:00"
     }
   ],
-  "appeal": [
+  "active_cards": [
     {
-      "id": "A1",
-      "decision": "D1",
-      "text": "该消息涉及企业的部分需按N3复核。"
+      "id": "C1",
+      "ref": [
+        "N1",
+        "N2"
+      ],
+      "display": [
+        "S1",
+        "S3"
+      ],
+      "text": "12月备案一律照常，港区柜只暂停换件至12月5日。",
+      "copied_viewers": [
+        "读者甲",
+        "读者丙"
+      ],
+      "published": "2026-11-27T13:00:00+08:00"
+    }
+  ],
+  "slots": [
+    {
+      "id": "SLOT1",
+      "surface": "信息流",
+      "capacity": 1,
+      "max_chars": 30,
+      "displays": [
+        "S1",
+        "S2",
+        "S5"
+      ]
     },
     {
-      "id": "A2",
-      "decision": "D2",
-      "text": "把柜台问题当成明确断言，原句是询问，请核查。"
+      "id": "SLOT2",
+      "surface": "正文",
+      "capacity": 2,
+      "max_chars": 74,
+      "displays": [
+        "S3",
+        "S4"
+      ]
     }
   ]
 }
